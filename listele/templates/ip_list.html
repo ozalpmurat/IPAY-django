@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>IP listeleme</title>
+    <link rel="stylesheet" href="/static/cyrfB.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'cyrfB.css' %}">
+</head>
+<body>
+    <h1>IP listesi</h1>
+    <table border=0>
+        <tr>
+		<th>IP adresi</th>
+		<th>MAC adresi</th>
+		<th>E-posta adresi</th>
+		<th>Birim</th>
+		<th>Tarih</th>
+		<th>Aktif mi?</th>
+		<th>Açıklama</th>
+	</tr>
+
+        {% for ip in ipler %}
+            <tr class="odd">
+                <td>{{ ip.ip }}</td>
+                <td>{{ ip.mac }}</td>
+                <td>{{ ip.eposta }}</td>
+                <td>{{ ip.birim }}</td>
+                <td>{{ ip.tarih }}</td>
+                <td>{{ ip.aktif }}</td>
+                <td>{{ ip.aciklama }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
