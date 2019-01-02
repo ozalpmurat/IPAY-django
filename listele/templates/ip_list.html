@@ -7,8 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'cyrfB.css' %}">
 </head>
 <body>
+	{% block title %}{{ section.title }}{% endblock %}
+
     <h1>IP listesi</h1>
-    <table border=0>
+    <table>
         <tr>
 		<th>IP adresi</th>
 		<th>MAC adresi</th>
@@ -18,7 +20,6 @@
 		<th>Aktif mi?</th>
 		<th>Açıklama</th>
 	</tr>
-
         {% for ip in ipler %}
             <tr class="odd">
                 <td>{{ ip.ip }}</td>
@@ -31,5 +32,8 @@
             </tr>
         {% endfor %}
     </table>
+    {{ ipler.0 }}<br>
+    {{ ipler.0.mac }}<br>
+    {{ ipler }}
 </body>
 </html>
