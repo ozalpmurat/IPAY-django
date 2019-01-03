@@ -1,6 +1,5 @@
 from django.db import models
 from macaddress.fields import MACAddressField
-#from django.utils import timezone
 
 class birim(models.Model):
     isim = models.CharField(max_length=200)

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'listele',
+    'django_extensions',
+    "django_tables2",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,7 @@ TEMPLATES = [
         },
     },
 ]
+#DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap4.html'
 
 WSGI_APPLICATION = 'ipay.wsgi.application'
 

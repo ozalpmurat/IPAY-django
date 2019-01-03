@@ -3,11 +3,23 @@
 <html>
 <head>
     <title>IP listeleme</title>
-    <link rel="stylesheet" href="/static/cyrfB.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'cyrfB.css' %}">
+    <link rel="stylesheet" href="/static/yedek.css">
 </head>
 <body>
     <h1>IP listesi</h1>
+{% load render_table from django_tables2 %}
+{% render_table ipler %}
+
+{{ ipler.0 }}<br>
+{{ ipler.0.mac }}<br>
+{{ ipler }}<br>
+{{ birimler }}<br><br>
+
+<form action="/url/to/submit/" method="post" class="form">
+    {{ form }}
+<button type="submit" class="btn btn-primary">Gönder</button>
+</form>
+
     <table>
         <tr>
 		<th>IP adresi</th>
@@ -30,9 +42,5 @@
             </tr>
         {% endfor %}
     </table>
-    {{ ipler.0 }}<br>
-    {{ ipler.0.mac }}<br>
-    {{ ipler }}<br>
-    {{ birimler }}
 </body>
 </html>
